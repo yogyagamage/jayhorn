@@ -33,6 +33,8 @@ import soottocfg.cfg.statement.PushStatement;
 import soottocfg.cfg.statement.Statement;
 import soottocfg.soot.transformers.ArrayTransformer;
 
+import static jayhorn.hornify.HornEncoderContext.GeneratedAssertions.REACHABILITY;
+
 /**
  * Holds the context of the current Horn clause construction:
  * - mapping from ClassVariables to Invariant Predicates
@@ -79,6 +81,8 @@ public class HornEncoderContext {
     }
 
     public static enum GeneratedAssertions {
+        // New mode: check if a specific method is reachable
+        REACHABILITY,
         // only include actual safety assertions; this will under-approximate,
         // and turn every over-approximated statement into an assume(false)
         // (you can trust result UNSAFE, but not SAFE)

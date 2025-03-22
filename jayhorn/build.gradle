@@ -30,7 +30,6 @@ repositories {
 dependencies {    
     compile 'args4j:args4j:2.32'    
     compile 'log4j:log4j:1.2.17'
-    compile 'com.google.code.findbugs:annotations:3.0.0'
     compile fileTree(dir: 'lib', include: '*.jar')
     compile project(':soottocfg')
     compile 'uuverifiers:eldarica_2.11:nightly-SNAPSHOT'
@@ -66,7 +65,7 @@ jar {
 task createRunScript {
     description 'Create run script to run from same directory as jayhorn.jar. Can be packaged up with jayhorn.jar when distributing the tool'
     doLast {
-        new File("build/libs/jayhorn").text = """#!/bin/bash
+        new File("$rootDir/build/libs/jayhorn").text = """#!/bin/bash
 
 # parse arguments
 BENCHMARK=""

@@ -108,7 +108,6 @@ public class SootToCfg {
 		// run soot to load all classes.
 		SootRunner runner = new SootRunner();
 		runner.run(input, classPath);
-
                 if (Options.v().printJimple) {
                     System.out.println("Jimple before transformations:");
                     for (SootClass sc : Scene.v().getApplicationClasses()) {
@@ -193,9 +192,9 @@ public class SootToCfg {
 		pia.addIDs(program);
 
 		// print CFG
-		if (Options.v().printCFG()) {
+//		if (Options.v().printCFG()) {
 			System.out.println(program);
-		}
+//		}
 
 		// reset all the soot stuff.
 		SootTranslationHelpers.v().reset();
