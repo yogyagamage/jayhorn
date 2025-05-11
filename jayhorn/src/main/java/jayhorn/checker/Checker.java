@@ -19,7 +19,7 @@ public abstract class Checker {
 	}
 
         public enum CheckerResult {
-          SAFE, UNSAFE, UNKNOWN, REACHABLE, UNREACHABLE
+          SAFE, UNSAFE, UNKNOWN, VULNERABLE, REACHABLE, UNREACHABLE
         }
 	
 	public abstract CheckerResult checkProgram(Program program);

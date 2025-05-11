@@ -29,6 +29,8 @@ public class Main {
                 return "SAFE";
             case UNSAFE:
                 return "UNSAFE";
+            case VULNERABLE:
+                return "VULNERABLE";
             case REACHABLE:
                 return "REACHABLE";
             case UNREACHABLE:
@@ -113,8 +115,8 @@ public class Main {
         // Hardcoded arguments equivalent to:
         // java -jar jayhorn/build/libs/jayhorn.jar -j /Users/yogyagamage/Documents/UdeM/MSR/weaverSbomMiner/target/WeaverSbomMiner.jar -cfg
         String[] hardcodedArgs = {
-                "-j", "example/classes2",
-                "-cfg", "-checker", "theo"
+                "-j", "example/hello-nw",
+                "-cfg", "-checker", "safety"
         };
 
         Options options = Options.v();
